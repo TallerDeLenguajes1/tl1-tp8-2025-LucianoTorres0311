@@ -17,9 +17,11 @@ namespace creadorTareas
         {
             get; set;
         }
-        public void cargarTarea(int id)
+        
+        public void cargarTarea()
         {
-            TareaID = id;
+            Console.Write("Ingrese el id de la tarea:");
+            TareaID = int.Parse(Console.ReadLine());
             Console.Write("Ingrese la descripción de la tarea: ");
             Descripcion = Console.ReadLine();
             Console.Write("Ingrese la duración (entre 10 y 100): ");
