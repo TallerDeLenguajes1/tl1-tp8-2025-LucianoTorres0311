@@ -17,7 +17,7 @@ namespace creadorTareas
         {
             get; set;
         }
-        
+
         public void cargarTarea()
         {
             Console.Write("Ingrese el id de la tarea:");
@@ -33,7 +33,23 @@ namespace creadorTareas
                     Console.Write("Ingrese Una duracion valida:");
                     Duracion = int.Parse(Console.ReadLine());
                 } while (Duracion < 10 || Duracion > 100);
-            }   
-        } 
+            }
+        }
+        public void buscarTarea(List<Tarea> tareasPendientes)
+        {
+            string aux;
+            Console.WriteLine("Ingrese la descripcion que desea buscar");
+            aux = Console.ReadLine();
+            foreach (var tareasPen in tareasPendientes)
+            {
+                if (tareasPen.Descripcion == aux)
+                {
+                    Console.WriteLine("La tarea que usted busco es:");
+                    Console.WriteLine($"ID de la tarea:{tareasPen.TareaID}");
+                    Console.WriteLine($"Descripcion de la tarea:{tareasPen.Descripcion}");
+                    Console.WriteLine($"Duracion de la tarea:{tareasPen.Duracion}");
+                }
+            }
+        }
     }
 }

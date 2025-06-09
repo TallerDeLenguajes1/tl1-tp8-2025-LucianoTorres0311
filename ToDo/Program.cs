@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 using creadorTareas;
 int decision;
 int id;
@@ -29,17 +30,18 @@ do
             id = int.Parse(Console.ReadLine());
             for (int i = 0; i < tareasPendientes.Count; i++)
             {
-                 if (tareasPendientes[i].TareaID == id)
+                if (tareasPendientes[i].TareaID == id)
                 {
                     tareasRealizadas.Add(tareasPendientes[i]);
                     tareasPendientes.Remove(tareasPendientes[i]);
                     Console.WriteLine("La tarea fue marcada como realizada");
-                } else
+                }
+                else
                 {
                     Console.WriteLine("La tarea con ese id no se pudo encontrar");
                 }
             }
-           
+
             break;
 
         case 2:
@@ -58,6 +60,11 @@ do
                 Console.WriteLine($"Duracion:{tareasReal.Duracion}");
             }
             break;
+        case 4:
+            Tarea buscarTarea = new Tarea();
+            buscarTarea.buscarTarea(tareasPendientes);
+            break;
+        
     }
    
 } while (decision != 0);
